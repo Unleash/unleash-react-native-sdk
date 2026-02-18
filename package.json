@@ -36,7 +36,7 @@
     "build": "tsc && vite build",
     "prepack": "yarn run build",
     "test": "vitest --watch",
-    "test:ci": "CI=true vitest run --passWithNoTests"
+    "test:ci": "CI=true vitest run"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.4",
