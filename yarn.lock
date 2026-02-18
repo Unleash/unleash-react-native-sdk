@@ -1135,9 +1135,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unleash/unleash-react-native@workspace:.":
+"@unleash/unleash-react-native-sdk@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@unleash/unleash-react-native@workspace:."
+  resolution: "@unleash/unleash-react-native-sdk@workspace:."
   dependencies:
     "@react-native-async-storage/async-storage": "npm:^2.1.2"
     "@testing-library/jest-dom": "npm:^6.1.4"
