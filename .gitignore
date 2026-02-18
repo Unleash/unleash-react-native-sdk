@@ -3,3 +3,6 @@
 yarn-error.log
 /coverage
 .idea
+.yarn/install-state.gz
+.yarn/build-state.yml
+.yarn/unplugged
