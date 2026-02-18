@@ -1,10 +1,10 @@
 {
-  "name": "@unleash/unleash-react-native",
+  "name": "@unleash/unleash-react-native-sdk",
   "version": "1.0.0",
   "description": "A React Native / Expo SDK for Unleash",
   "repository": {
     "type": "git",
-    "url": "https://github.com/unleash/unleash-react-native.git"
+    "url": "https://github.com/unleash/unleash-react-native-sdk.git"
   },
   "license": "Apache-2.0",
   "type": "module",
