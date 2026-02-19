@@ -1,20 +1,22 @@
 {
-  "name": "@nunogois/unleash-react-native",
-  "version": "0.2.1",
+  "name": "@unleash/unleash-react-native-sdk",
+  "version": "1.0.0",
   "description": "A React Native / Expo SDK for Unleash",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nunogois/unleash-react-native.git"
+    "url": "https://github.com/unleash/unleash-react-native-sdk.git"
   },
+  "license": "Apache-2.0",
   "type": "module",
-  "module": "dist/index.js",
-  "main": "dist/index.cjs",
-  "react-native": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "module": "dist/unleash-react-native.js",
+  "main": "dist/unleash-react-native.cjs",
+  "react-native": "dist/unleash-react-native.js",
+  "types": "dist/unleash-react-native.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/unleash-react-native.js",
+      "require": "./dist/unleash-react-native.cjs",
+      "types": "./dist/unleash-react-native.d.ts"
     }
   },
   "publishConfig": {
@@ -27,24 +29,40 @@
     "feature-flags"
   ],
   "files": [
-    "dist"
+    "dist",
+    "LICENSE.txt"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --dts --format esm,cjs --out-dir dist"
+    "build": "tsc && vite build",
+    "prepack": "yarn run build",
+    "test": "vitest --watch",
+    "test:ci": "CI=true vitest run"
   },
   "devDependencies": {
-    "tsup": "^8.4.0",
-    "typescript": "^5.0.0",
-    "@types/react": "^18.2.38"
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/react": "^18.2.38",
+    "happy-dom": "^15.10.2",
+    "jsdom": "^23.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-test-renderer": "^18.2.0",
+    "typescript": "^5.3.2",
+    "unleash-proxy-client": "^3.7.3",
+    "vite": "^4.5.0",
+    "vite-plugin-dts": "^3.6.3",
+    "vitest": "^0.34.6"
   },
   "peerDependencies": {
     "@types/react": "^18.2.38",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "unleash-proxy-client": "^3.7.5"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.1.2",
     "@unleash/proxy-client-react": "^5.0.0",
-    "react-native-get-random-values": "^1.11.0",
-    "unleash-proxy-client": "^3.7.5"
-  }
+    "react-native-get-random-values": "^2.0.0"
+  },
+  "packageManager": "yarn@4.12.0"
 }

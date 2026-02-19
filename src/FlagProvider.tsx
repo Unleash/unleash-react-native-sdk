@@ -27,3 +27,5 @@ export const FlagProvider = ({
     />
   )
 }
+
+export default FlagProvider

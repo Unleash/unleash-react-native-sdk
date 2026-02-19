@@ -1,16 +1,15 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "outDir": "dist",
-    "module": "ES6",
-    "target": "ES6",
-    "moduleResolution": "Node",
-    "strict": true,
     "esModuleInterop": true,
-    "declaration": true,
-    "declarationDir": "dist",
-    "emitDeclarationOnly": false
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["vitest/globals"]
   },
-  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
