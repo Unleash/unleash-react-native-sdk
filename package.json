@@ -63,6 +63,5 @@
     "@react-native-async-storage/async-storage": "^2.1.2",
     "@unleash/proxy-client-react": "^5.0.0",
     "react-native-get-random-values": "^2.0.0"
-  },
-  "packageManager": "yarn@4.12.0"
+  }
 }

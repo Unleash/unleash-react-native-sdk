@@ -21,13 +21,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Enable Corepack + Yarn 4.12.0
-        run: |
-          corepack enable
-          corepack install
-
       - name: 📌 Install
-        run: yarn install --immutable
+        run: yarn install --frozen-lockfile
 
       - name: 🔨 Build
         run: yarn build
