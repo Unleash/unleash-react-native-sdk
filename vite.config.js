@@ -7,16 +7,24 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      formats: ['es', 'umd'],
+      formats: ['es'],
       name: 'UnleashReactNative',
       fileName: 'unleash-react-native'
     },
     rollupOptions: {
-      external: ['react', 'unleash-proxy-client'],
+      external: [
+        'react',
+        'react-native',
+        '@react-native-async-storage/async-storage',
+        '@unleash/proxy-client-react',
+        'react-native-get-random-values',
+        'unleash-proxy-client'
+      ],
       output: {
         exports: 'named',
         globals: {
-          react: 'react'
+          react: 'React',
+          'react-native': 'ReactNative'
         }
       }
     }
