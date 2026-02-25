@@ -9,14 +9,14 @@
   "license": "Apache-2.0",
   "type": "module",
   "module": "dist/unleash-react-native.js",
-  "main": "dist/unleash-react-native.cjs",
+  "main": "dist/unleash-react-native.umd.cjs",
   "react-native": "dist/unleash-react-native.js",
-  "types": "dist/unleash-react-native.d.ts",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/unleash-react-native.js",
-      "require": "./dist/unleash-react-native.cjs",
-      "types": "./dist/unleash-react-native.d.ts"
+      "require": "./dist/unleash-react-native.umd.cjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "publishConfig": {
