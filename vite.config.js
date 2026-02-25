@@ -8,7 +8,6 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       formats: ['es'],
-      name: 'UnleashReactNative',
       fileName: 'unleash-react-native'
     },
     rollupOptions: {
@@ -19,14 +18,7 @@ export default defineConfig({
         '@unleash/proxy-client-react',
         'react-native-get-random-values',
         'unleash-proxy-client'
-      ],
-      output: {
-        exports: 'named',
-        globals: {
-          react: 'React',
-          'react-native': 'ReactNative'
-        }
-      }
+      ]
     }
   },
   plugins: [dts()],
