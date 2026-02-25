@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
+import pkg from './package.json'
 
 export default defineConfig({
   build: {
@@ -12,12 +13,8 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        'react',
-        'react-native',
-        '@react-native-async-storage/async-storage',
-        '@unleash/proxy-client-react',
-        'react-native-get-random-values',
-        'unleash-proxy-client'
+        ...Object.keys(pkg.peerDependencies || {}),
+        ...Object.keys(pkg.dependencies || {})
       ]
     }
   },
