@@ -4,7 +4,7 @@
   "description": "A React Native / Expo SDK for Unleash",
   "repository": {
     "type": "git",
-    "url": "https://github.com/unleash/unleash-react-native-sdk.git"
+    "url": "https://github.com/Unleash/unleash-react-native-sdk.git"
   },
   "license": "Apache-2.0",
   "type": "module",
