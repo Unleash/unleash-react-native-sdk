@@ -1,21 +1,19 @@
 {
   "name": "@unleash/unleash-react-native-sdk",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.5",
   "description": "A React Native / Expo SDK for Unleash",
   "repository": {
     "type": "git",
-    "url": "https://github.com/unleash/unleash-react-native-sdk.git"
+    "url": "https://github.com/Unleash/unleash-react-native-sdk.git"
   },
   "license": "Apache-2.0",
   "type": "module",
   "module": "dist/unleash-react-native.js",
-  "main": "dist/unleash-react-native.umd.cjs",
   "react-native": "dist/unleash-react-native.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/unleash-react-native.js",
-      "require": "./dist/unleash-react-native.umd.cjs",
       "types": "./dist/index.d.ts"
     }
   },
@@ -57,7 +55,7 @@
   "peerDependencies": {
     "@types/react": "^18.2.38 || ^19.0.0",
     "react": "^18.2.0 || ^19.0.0",
-    "unleash-proxy-client": "^3.7.5"
+    "unleash-proxy-client": "^3.7.3"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.1.2",
