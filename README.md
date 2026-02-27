@@ -8,8 +8,22 @@ Full documentation: https://docs.getunleash.io/sdks/react-native
 
 ## Installation
 
+### npm
+
 ```sh
 npm install @unleash/unleash-react-native-sdk unleash-proxy-client
+```
+
+### Yarn
+
+```sh
+yarn add @unleash/unleash-react-native-sdk unleash-proxy-client
+```
+
+### Expo
+
+```sh
+npx expo install @unleash/unleash-react-native-sdk unleash-proxy-client
 ```
 
 ## Quick start
@@ -60,12 +74,6 @@ yarn install
 yarn test
 ```
 
-To run tests in CI mode (no watch):
-
-```sh
-yarn test:ci
-```
-
 ### Building
 
 ```sh
@@ -73,12 +81,6 @@ yarn build
 ```
 
 ### Code style and formatting
-
-This project uses TypeScript. Run the type checker with:
-
-```sh
-yarn tsc --noEmit
-```
 
 See the [Unleash contribution guide](https://github.com/Unleash/unleash/blob/main/CONTRIBUTING.md) for general guidelines.
 
