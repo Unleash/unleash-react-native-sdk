@@ -9,11 +9,7 @@ vi.mock('unleash-proxy-client', () => ({
 }))
 
 vi.mock('./asyncStorageProvider', () => ({
-  AsyncStorageProvider: vi.fn().mockImplementation(appName => ({
-    appName,
-    get: vi.fn(),
-    save: vi.fn()
-  }))
+  AsyncStorageProvider: vi.fn()
 }))
 
 // Import after mocks so the module uses mocked dependencies
