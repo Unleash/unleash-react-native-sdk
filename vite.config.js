@@ -21,7 +21,6 @@ export default defineConfig({
   plugins: [dts()],
   test: {
     globals: true,
-    environment: 'jsdom',
-    setupFiles: './testSetup.js'
+    environment: 'node'
   }
 })
