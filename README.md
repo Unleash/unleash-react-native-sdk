@@ -57,7 +57,7 @@ For configuration options, context management, bootstrapping, testing, and troub
 
 ### Requirements
 
-- Node.js 18 or later
+- Node.js 20.11 or later
 - Yarn
 
 ### Local development
