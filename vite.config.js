@@ -1,7 +1,12 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
-import pkg from './package.json'
+import pkg from './package.json' with { type: 'json' }
+
+const externalDependencies = [
+  ...Object.keys(pkg.peerDependencies || {}),
+  ...Object.keys(pkg.dependencies || {})
+]
 
 export default defineConfig({
   build: {
@@ -12,10 +17,10 @@ export default defineConfig({
       fileName: 'unleash-react-native'
     },
     rollupOptions: {
-      external: [
-        ...Object.keys(pkg.peerDependencies || {}),
-        ...Object.keys(pkg.dependencies || {})
-      ]
+      external: id =>
+        externalDependencies.some(
+          dependency => id === dependency || id.startsWith(`${dependency}/`)
+        )
     }
   },
   plugins: [dts()],
