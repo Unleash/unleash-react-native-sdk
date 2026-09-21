@@ -12,7 +12,7 @@ Full documentation: https://docs.getunleash.io/sdks/react-native
 - React Native 0.81 or later
 - Expo SDK 54 or later
 
-## Migrating from v1
+## Migrating from v1 to v2
 
 Version 2 has no API changes, but requires React 19 and React Native 0.81 or
 later (Expo SDK 54 or later).
