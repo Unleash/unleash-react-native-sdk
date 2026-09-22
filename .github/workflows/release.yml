@@ -19,10 +19,11 @@ on:
 
 jobs:
   from-template:
-    uses: Unleash/.github/.github/workflows/npm-release.yml@v3.0.1
+    uses: Unleash/.github/.github/workflows/npm-release.yml@v4.0.2
     with:
       version: ${{ github.event.inputs.version }}
       tag: ${{ github.event.inputs.tag }}
+      setup-command: yarn install --frozen-lockfile
     secrets:
       UNLEASH_BOT_APP_ID: ${{ secrets.UNLEASH_BOT_APP_ID }}
       UNLEASH_BOT_PRIVATE_KEY: ${{ secrets.UNLEASH_BOT_PRIVATE_KEY }}

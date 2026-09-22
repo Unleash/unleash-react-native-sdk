@@ -1,8 +1,8 @@
-import React, { type PropsWithChildren } from 'react'
 import {
   FlagProvider as BaseFlagProvider,
   type IFlagProvider
 } from '@unleash/proxy-client-react'
+import type { PropsWithChildren } from 'react'
 import { AsyncStorageProvider } from './asyncStorageProvider'
 
 export const FlagProvider = ({

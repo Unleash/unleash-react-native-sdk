@@ -6,6 +6,17 @@ You can use this SDK with [Unleash Enterprise](https://www.getunleash.io/pricing
 
 Full documentation: https://docs.getunleash.io/sdks/react-native
 
+## Compatibility
+
+- React 19
+- React Native 0.81 or later
+- Expo SDK 54 or later
+
+## Migrating from v1 to v2
+
+Version 2 has no API changes, but requires React 19 and React Native 0.81 or
+later (Expo SDK 54 or later).
+
 ## Installation
 
 ### npm
@@ -57,7 +68,7 @@ For configuration options, context management, bootstrapping, testing, and troub
 
 ### Requirements
 
-- Node.js 20.11 or later
+- Node.js 22.12 or later
 - Yarn
 
 ### Local development
