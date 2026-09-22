@@ -5,8 +5,14 @@ const asyncStorage = vi.hoisted(() => ({
   setItem: vi.fn()
 }))
 
+const platform = vi.hoisted(() => ({ OS: 'web' }))
+
 vi.mock('@react-native-async-storage/async-storage', () => ({
   default: asyncStorage
+}))
+
+vi.mock('react-native', () => ({
+  Platform: platform
 }))
 
 import { AsyncStorageProvider } from './asyncStorageProvider'
@@ -15,6 +21,7 @@ describe('AsyncStorageProvider', () => {
   beforeEach(() => {
     vi.clearAllMocks()
     vi.unstubAllGlobals()
+    platform.OS = 'web'
   })
 
   test('does not access Async Storage during server rendering', async () => {
@@ -42,5 +49,17 @@ describe('AsyncStorageProvider', () => {
     )
     expect(asyncStorage.getItem).toHaveBeenCalledWith('app:flags')
     expect(value).toEqual({ enabled: true })
+  })
+
+  test('uses Async Storage on native when window is unavailable', async () => {
+    platform.OS = 'ios'
+    const provider = new AsyncStorageProvider('app')
+
+    await provider.save('flags', { enabled: true })
+
+    expect(asyncStorage.setItem).toHaveBeenCalledWith(
+      'app:flags',
+      '{"enabled":true}'
+    )
   })
 })

@@ -1,7 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { Platform } from 'react-native'
 import type { IStorageProvider } from 'unleash-proxy-client'
 
-const isServerRendering = () => typeof window === 'undefined'
+const isServerRendering = () =>
+  Platform.OS === 'web' && typeof window === 'undefined'
 
 export class AsyncStorageProvider implements IStorageProvider {
   private prefix: string
