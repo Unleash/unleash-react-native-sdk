@@ -3,7 +3,7 @@ import {
   type IFlagProvider
 } from '@unleash/proxy-client-react'
 import type { PropsWithChildren } from 'react'
-import { AsyncStorageProvider } from './asyncStorageProvider'
+import { createDefaultStorageProvider } from './defaultStorageProvider'
 
 export const FlagProvider = ({
   config,
@@ -15,7 +15,7 @@ export const FlagProvider = ({
     reactNativeConfig = {
       ...config,
       storageProvider:
-        config.storageProvider ?? new AsyncStorageProvider(config.appName)
+        config.storageProvider ?? createDefaultStorageProvider(config.appName)
     }
   }
 

@@ -4,24 +4,27 @@ const baseClient = vi.hoisted(() => ({
   BaseUnleashClient: vi.fn()
 }))
 
+const storage = vi.hoisted(() => ({
+  createDefaultStorageProvider: vi.fn(() => ({ get: vi.fn(), save: vi.fn() }))
+}))
+
 vi.mock('unleash-proxy-client', () => ({
   UnleashClient: baseClient.BaseUnleashClient
 }))
 
-vi.mock('./asyncStorageProvider', () => ({
-  AsyncStorageProvider: vi.fn()
+vi.mock('./defaultStorageProvider', () => ({
+  createDefaultStorageProvider: storage.createDefaultStorageProvider
 }))
 
 // Import after mocks so the module uses mocked dependencies
 import { UnleashClient } from './unleashClient'
-import { AsyncStorageProvider } from './asyncStorageProvider'
 
 describe('UnleashClient', () => {
   beforeEach(() => {
     vi.clearAllMocks()
   })
 
-  test('adds AsyncStorageProvider when config.storageProvider is missing', () => {
+  test('adds the default storage provider when none is configured', () => {
     const config = {
       appName: 'my-app',
       clientKey: 'my-secret',
@@ -30,7 +33,7 @@ describe('UnleashClient', () => {
 
     new UnleashClient(config as any)
 
-    expect(AsyncStorageProvider).toHaveBeenCalledWith('my-app')
+    expect(storage.createDefaultStorageProvider).toHaveBeenCalledWith('my-app')
     expect(baseClient.BaseUnleashClient).toHaveBeenCalledWith(
       expect.objectContaining({
         ...config,
@@ -50,7 +53,7 @@ describe('UnleashClient', () => {
 
     new UnleashClient(config as any)
 
-    expect(AsyncStorageProvider).not.toHaveBeenCalled()
+    expect(storage.createDefaultStorageProvider).not.toHaveBeenCalled()
     expect(baseClient.BaseUnleashClient).toHaveBeenCalledWith(
       expect.objectContaining({
         ...config,
